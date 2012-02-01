@@ -170,9 +170,9 @@ var chat = {
 			
 			case 'chatLine':
 				arr = [
-					'<div class="chat chat-',params.id,' rounded"><span class="gravatar"><img src="',params.gravatar,
-					'" width="23" height="23" onload="this.style.visibility=\'visible\'" />','</span><span class="author">',params.author,
-					':</span><span class="text">',params.text,'</span><span class="time">',params.time,'</span></div>'];
+					'<div class="chat chat-',params.id,' rounded"><div class="gravatar"><img src="',params.gravatar,
+					'" onload="this.style.visibility=\'visible\'" />','</div><div class="msg_author"><ul><li>',params.author,'</li><li style="float:right">',params.time,'</li></ul></div>',
+					'<div class="msg_content">',params.text,'</div>'];
 			break;
 			
 			case 'user':
@@ -289,35 +289,7 @@ var chat = {
 		});
 	},
 	
-	// Requesting a list with all the users.
 	
-	getUsers : function(callback){
-		$.tzGET('getUsers',function(r){
-			
-			var users = [];
-			
-			for(var i=0; i< r.users.length;i++){
-				if(r.users[i]){
-					users.push(chat.render('user',r.users[i]));
-				}
-			}
-			
-			var message = '';
-			
-			if(r.total<1){
-				message = 'No one is online';
-			}
-			else {
-				message = r.total+' '+(r.total == 1 ? 'person':'people')+' online';
-			}
-			
-			users.push('<p class="count">'+message+'</p>');
-			
-			$('#chatUsers').html(users.join(''));
-			
-			setTimeout(callback,15000);
-		});
-	},
 	
 	// This method displays an error message on the top of the page:
 	

@@ -5,8 +5,8 @@
 
 body{
 	color:#eee;
-	background:url('../img/page_bg.jpg') repeat-x #323232;
-	font:15px Calibri,Arial,sans-serif;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:11px;
 	border-top:5px solid #212121;
 }
 
@@ -19,19 +19,7 @@ body{
 	left:0;
 }
 
-a.tzine,a.tzine:visited{
-	background:url("../img/tzine.png") no-repeat right top;
-	border:none;
-	color:#FCFCFC;
-	font-size:12px;
-	height:70px;
-	left:50%;
-	line-height:31px;
-	margin:23px 0 0 110px;
-	position:absolute;
-	top:0;
-	width:290px;
-}
+
 
 .tri{
 	border-color:transparent transparent #212121;
@@ -59,7 +47,7 @@ a, a:visited {
 	text-decoration:none;
 	outline:none;
 	border-bottom:1px dotted #97cae6;
-	color:#97cae6;
+	color:#000;
 }
 
 a:hover{

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Making an AJAX Web Chat With PHP, MySQL and jQuery | Tutorialzine Demo</title>
+<title>Messages | Lostmannequin</title>
 
 <link rel="stylesheet" type="text/css" href="js/jScrollPane/jScrollPane.css" />
 <link rel="stylesheet" type="text/css" href="css/page.css" />
@@ -14,10 +14,9 @@
 
 <div id="chatContainer">
 
-    <div id="chatTopBar" class="rounded"></div>
+    <div id="chatTopBar" class="rounded" style="border:1px #060 solid;"></div>
     <div id="chatLineHolder"></div>
     
-    <div id="chatUsers" class="rounded"></div>
     <div id="chatBottomBar" class="rounded">
     	<div class="tip"></div>
         
@@ -28,7 +27,7 @@
         </form>
         
         <form id="submitForm" method="post" action="">
-            <input id="chatText" name="chatText" class="rounded" maxlength="255" />
+            <textarea id="chatText" name="chatText" class="rounded"></textarea>
             <input type="submit" class="blueButton" value="Submit" />
         </form>
         

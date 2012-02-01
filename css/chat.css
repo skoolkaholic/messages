@@ -1,9 +1,12 @@
 /* Main chat container */
 
 #chatContainer{
-	width:510px;
-	margin:100px auto;
+	width:800px;
+	margin:0px auto;
 	position:relative;
+	overflow:hidden;
+	padding-bottom:10px;
+	border:1px #000 solid;
 }
 
 
@@ -36,47 +39,54 @@
 
 
 #chatLineHolder{
-	height:360px;
-	width:350px;
+	width:800px;
+	height:400px;
 	margin-bottom:20px;
+	border-bottom:1px #000 solid;
 }
 
 .chat{
-	min-height:24px;
+	min-height:20px;
 	padding:6px;
-	border:1px solid #FFFFFF;
-	
-	padding:8px 6px 4px 37px;
+	border-bottom:1px dotted #ccc;
+	padding:8px 6px 10px 5px;
 	position:relative;
-	margin:0 10px 10px 0;
+	margin:0 10px 10px 10px;
+	overflow:hidden;
 }
+
+.msg-left {background-color:#000 !important;}
 
 .chat:last-child{
 	margin-bottom:0;
 }
 
-.chat span{
-	color:#fff;
-	font-size:12px;
-}
+
+/* ---------- 
+
 
 .chat .text{
-	color:#ffff;
+	color:#000;
 	display:inline-block;
-	font-size:15px;
+	font-size:11px;
 	overflow:hidden;
 	vertical-align:top;
 	width:190px;
 }
 
+
+ ---------- */
 .chat .gravatar{	
-	left:7px;
-	position:absolute;
-	top:7px;
+	margin:1px;
+	float:left;
+	width:65px;
 }
 
 .chat img{
+	width:60px;
 	display:block;
+	margin:3px;
+	border-radius:4px;
 	visibility:hidden;
 }
 
@@ -87,17 +97,37 @@
 	font-size:11px;
 }
 
-.chat .author{
-	margin-right:6px;
+.chat .msg_author{
+	width:675px;
+	height:20px;
+	color:#000;
 	font-size:11px;
+	float:right;
+	margin:0px 15px 0px 0px;
+}
+.chat .msg_author li {
+	color:#000;
+	display:inline;
 }
 
+.chat .msg_content{
+	width:675px;
+	padding:5px;
+	margin-right:15px;
+	font-size:11px;
+	float:right;
+	color:#000;
+	overflow:hidden;
+	vertical-align:top;
+}
 
 /* Chat User Area */
 
 
+/* ---------- 
+
 #chatUsers{
-	background-color:#202020;
+	background-color:#f9f9f9;
 	border:1px solid #111111;
 	height:360px;
 	position:absolute;
@@ -116,10 +146,12 @@
 
 #chatUsers .user img{
 	border:1px solid #444444;
+	border-radius:4px;
 	display:block;
 	visibility:hidden;
 }
 
+ ---------- */
 
 /* Bottom Bar */
 
@@ -141,17 +173,15 @@
 }
 
 #chatContainer input{
-	background:url('../img/input_bg.jpg') repeat-x #dcdcdc;
 	height:26px;
-	font:13px/26px Calibri,Arial,sans-serif;
 	color:#777;
 	border:1px solid;
-	border-color:#c1c1c1 #eee #eee #c1c1c1;
-	text-shadow:1px 1px 0 #E4E4E4;
 	padding:0 5px;
 	margin-right:5px;
 	width:185px;
 	outline:none;
+	border-radius:3px;
+	
 }
 
 
@@ -159,9 +189,11 @@
 	display:none;
 }
 
-input#chatText{
+textarea#chatText{
 	/* The chat submit text field */
-	width:385px;
+	width:770px;
+	font-size:11px; font-family:Tahoma, Geneva, sans-serif;
+	margin-bottom:10px;
 }
 
 
@@ -181,9 +213,8 @@ input#chatText{
 }
 
 .jspDrag {
-	background:url('../img/slider.png') no-repeat;
-	width:20px;
-	left:-9px;
+	width:3px;
+	left:-1px;
 	height:20px !important;
 	margin-top:-5px;
 }
@@ -197,19 +228,16 @@ input#chatText{
 
 
 a.logoutButton{
-	background-color:#bbb;
+	background-color:#000;
 	border:1px solid #eee !important;
-	color:#FFFFFF !important;
+	color:#fff !important;
 	font-size:12px;
 	padding:5px 9px;
 	position:absolute;
 	right:10px;
-	text-shadow:1px 1px 0 #888;
 	top:7px;
+	border-radius:3px;
 	
-	-moz-box-shadow:0 0 7px #888 inset;
-	-webkit-box-shadow:0 0 7px #888 inset;
-	box-shadow:0 0 7px #888 inset;
 }
 
 a.logoutButton:hover{
@@ -221,16 +249,16 @@ a.logoutButton:hover{
 }
 
 #chatContainer .blueButton{
-	border:none !important;
-	color:#516D7F !important;
-	display:inline-block;
-	font-size:13px;
-	height:29px;
-	text-align:center;
-	text-shadow:1px 1px 0 rgba(255, 255, 255, 0.4);
-	width:75px;
-	margin:0;
-	cursor:pointer;
+  width:100px;
+  height:25px;
+  border:none;
+  cursor:pointer;
+  text-align:center;
+  float:right;
+  margin-right:5px;
+  color:#FFFFFF;
+  background-color:#000;
+
 }
 
 #chatContainer .blueButton:hover{
@@ -251,9 +279,11 @@ p.noChats,
 }
 
 .rounded{
+	/* ---------- 
 	-moz-border-radius:4px;
 	-webkit-border-radius:4px;
 	border-radius:4px;
+	 ---------- */
 }
 
 #chatErrorMessage{
@@ -266,7 +296,7 @@ p.noChats,
 	font-size:23px;
 	padding:16px;
 	text-align:center;
-	color:#fff;
+	color:#000;
 	
 	text-shadow:1px 1px 0 #940f0f;
 }
